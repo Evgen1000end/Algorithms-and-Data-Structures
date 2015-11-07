@@ -1,5 +1,5 @@
 
-from Basic.Node import  Node
+from Main.Node import  Node
 
 
 class LinkedList(object):
@@ -35,6 +35,8 @@ class LinkedList(object):
             self.insertStart(data)
             return
 
+        self.counter+=1
+
         newNode = Node(data)
         actualNode = self.head
 
@@ -47,6 +49,9 @@ class LinkedList(object):
         self.insertEnd(data)
 
     def remove(self, data):
+
+        self.counter-=1
+
         if self.head:
             if data == self.head.data:
                 self.head = self.head.nextNode
